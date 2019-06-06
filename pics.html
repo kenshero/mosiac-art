@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pictures</title>
+    <link rel="stylesheet" type="text/css" href="./pics.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript" src="./data.js"></script>
+</head>
+<body>
+<div>
+    <h1>Header</h1>
+</div>
+<br/>
+
+<div class="container"  id="app">
+  <div v-for="(item, index) in pictures">
+    <div class="grid-item" :id="'grid-item-'+index">
+       <img class="img-item" :src="'images/'+ item.img_name"/>
+    </div>
+  </div>
+<!--       <div class="grid-item" id="grid-item-1">
+        <img class="img-item"src="images/a.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-2">
+        <img class="img-item" src="images/b.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-3">
+        <img class="img-item" src="images/c.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-4">
+        <img class="img-item" src="images/c.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-5">
+        <img class="img-item" src="images/d.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-6">
+        <img class="img-item" src="images/e.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-7">
+        <img class="img-item" src="images/f.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-8">
+        <img class="img-item" src="images/g.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-9">
+        <img class="img-item" src="images/h.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-10">
+        <img class="img-item" src="images/i.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-11">
+        <img class="img-item" src="images/j.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-12">
+        <img class="img-item" src="images/k.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-13">
+        <img class="img-item" src="images/l.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-14">
+        <img class="img-item" src="images/m.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-15">
+        <img class="img-item" src="images/n.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-16">
+        <img class="img-item" src="images/o.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-12">
+        <img class="img-item" src="images/p.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-13">
+        <img class="img-item" src="images/q.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-14">
+        <img class="img-item" src="images/r.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-15">
+        <img class="img-item" src="images/s.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-16">
+        <img class="img-item" src="images/t.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-16">
+        <img class="img-item" src="images/u.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-16">
+        <img class="img-item" src="images/v.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-16">
+        <img class="img-item" src="images/w.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-16">
+        <img class="img-item" src="images/x.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-16">
+        <img class="img-item" src="images/y.jpg" />
+      </div>
+      <div class="grid-item" id="grid-item-16">
+        <img class="img-item" src="images/z.jpg" />
+      </div> -->
+</div>
+<!-- 
+<table class="table-wrapper">
+    <tbody>
+        <tr>
+            <td class="pic-frame" rowspan="2"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" /></td>
+            <td class="pic-frame" colspan="3"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" /></td>
+        </tr>
+        <tr>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" /></td>
+            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" /></td>
+        </tr>
+    </tbody>
+</table>
+ -->
+<script type="text/javascript">
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!',
+      pictures: imgs_data
+    }
+  })
+
+
+  var fullWidth = window.innerWidth
+  var countPic = Math.floor(fullWidth / 150)
+  var picWidthItem = fullWidth / countPic
+  var leftPos = 0
+  var topPos = 0
+
+
+  if (fullWidth > 659) {
+    display_rating()
+  } else {
+    mobile_display()
+  }
+
+  function display_rating(){
+    for (var i = 0; i < document.getElementsByClassName("grid-item").length; i++) {
+      // console.log(document.getElementsByClassName("grid-item")[i+1].style.width = )
+      document.getElementsByClassName("grid-item")[i].style.width = picWidthItem.toString() + "px"
+      document.getElementsByClassName("grid-item")[i].style.height = picWidthItem.toString() + "px"
+    }
+
+    for (var i = 0; i < imgs_data.length ; i++) {
+      if (leftPos >= fullWidth) {
+        leftPos = 0
+        topPos += picWidthItem
+      }
+      if (imgs_data[i].rating == 2) {
+        document.getElementById("grid-item-"+ i ).style.width = (picWidthItem*3).toString() +"px"
+        document.getElementById("grid-item-"+ i ).style.height = (picWidthItem*3).toString() +"px"
+        document.getElementById("grid-item-"+ i ).style.zIndex  = "999"
+      }
+      else if (imgs_data[i].rating == 1) {
+        document.getElementById("grid-item-"+ i ).style.width = (picWidthItem*2).toString() +"px"
+        document.getElementById("grid-item-"+ i ).style.height = (picWidthItem*2).toString() +"px"
+        document.getElementById("grid-item-"+ i ).style.zIndex  = "888"
+      }
+      calculation_pos_img(i)
+    }
+
+  }
+
+  function mobile_display(){
+    for (var i = 0; i < document.getElementsByClassName("grid-item").length; i++) {
+      // console.log(document.getElementsByClassName("grid-item")[i+1].style.width = )
+      document.getElementsByClassName("grid-item")[i].style.width = picWidthItem.toString() + "px"
+      document.getElementsByClassName("grid-item")[i].style.height = picWidthItem.toString() + "px"
+    }
+
+    for (var i = 0; i < imgs_data.length ; i++) {
+      if (leftPos >= fullWidth) {
+        leftPos = 0
+        topPos += picWidthItem
+      }
+      document.getElementById("grid-item-"+ i ).style.left = leftPos+"px"
+      document.getElementById("grid-item-"+ i ).style.top = topPos+"px"
+      leftPos += picWidthItem
+    }
+
+  }
+
+  function calculation_pos_img(img_index) {
+    var left_pos = document.getElementById("grid-item-"+ img_index ).style.left
+    // console.log(left_pos)
+    document.getElementById("grid-item-"+ img_index).style.left = leftPos + "px"
+    document.getElementById("grid-item-"+ img_index).style.top = topPos + "px"
+    leftPos += picWidthItem
+    // if (left_pos <= ) {}
+  }
+
+  // document.getElementById("grid-item-2").style.left = "135px"
+  // document.getElementById("grid-item-3").style.left = "270px"
+  // document.getElementById("grid-item-4").style.left = "405px"
+  // document.getElementById("grid-item-5").style.left = "540px"
+  // document.getElementById("grid-item-6").style.left = "675px"
+  // document.getElementById("grid-item-7").style.left = "810px"
+  // document.getElementById("grid-item-8").style.left = "945px"
+  // document.getElementById("grid-item-9").style.left = "1080px"
+  // document.getElementById("grid-item-10").style.left = "1215px"
+  // document.getElementById("grid-item-11").style.left = "1350px"
+  // document.getElementById("grid-item-12").style.left = "1485px"
+  // document.getElementById("grid-item-13").style.left = "1620px"
+  // document.getElementById("grid-item-14").style.left = "1755px"
+  // document.getElementById("grid-item-15").style.left = "1890px"
+  // document.getElementById("grid-item-16").style.left = "2025px"
+
+</script>
+</body>
+</html>

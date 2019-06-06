@@ -1,0 +1,36 @@
+body {
+    margin: 0px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.grid-item {
+    position: absolute;
+/*    width: 135px;
+    height: 135px;*/
+}
+
+.img-item {
+    width: 100%;
+    height: 100%;
+}
+
+table {
+    empty-cells: show;
+    border: 1px solid #000;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x:auto;
+}
+
+.pic-frame {
+    width: 150px;
+    height: 120px;
+    padding: 0px;
+}

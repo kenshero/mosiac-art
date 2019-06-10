@@ -1,4 +1,4 @@
-imgs_data = [
+var imgs_data = [
   {
     "img_name": "a.jpg",
     "rating": 1
@@ -45,11 +45,11 @@ imgs_data = [
   },
   {
     "img_name": "l.jpg",
-    "rating": 0
+    "rating": 2
   },
   {
     "img_name": "m.jpg",
-    "rating": 2
+    "rating": 0
   },
   {
     "img_name": "n.jpg",
@@ -237,6 +237,50 @@ imgs_data = [
   },
   {
     "img_name": "d4.jpg",
-    "rating": 2
+    "rating": 0
   }
 ]
+
+imgs_data = imgs_data.map((item, index) => {
+  item.rating = Math.floor(Math.random() * 20)
+  return item
+})
+
+
+var largePics = getMostRating()
+var normalPics = getNormalRating()
+var normalPics = getNormalRating()
+
+function getMostRating() {
+  // var mostPicRating = imgs_data.reduce((rev, cur, index) => cur.rating > rev.rating ? cur : rev, imgs_data[0])
+  // var picIndex;
+  // var pics = []
+  // imgs_data.find((item, index) => {
+  //   if (mostPicRating.img_name === item.img_name) {
+  //     picIndex = index
+  //     return
+  //   }
+  // })
+
+  // var data = {
+  //   "index": picIndex,
+  //   "body": mostPicRating
+  // }
+  // pics.push(data)
+  var sortedPics = sortPics()
+  return sortedPics[0]
+}
+
+function getNormalRating() {
+  var sortedPics = sortPics()
+  var picsResult = sortedPics.slice(1, 5)
+  return picsResult
+}
+
+function sortPics() {
+  var data = imgs_data.map(function(item, index) {
+    item['index'] = index
+    return item
+  })
+  return data.sort((a, b) => (a.rating > b.rating) ? -1 : 1)
+}

@@ -3,7 +3,7 @@
 <head>
     <title>Pictures</title>
     <link rel="stylesheet" type="text/css" href="./pics.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/vue.js"></script>
     <script type="text/javascript" src="./data.js"></script>
 </head>
 <body>
@@ -12,171 +12,90 @@
 </div>
 <br/>
 
-<div class="container"  id="app">
+<div class="container" id="app">
   <div v-for="(item, index) in pictures">
-    <div class="grid-item" :id="'grid-item-'+index">
+    <div class="grid-item-small" :id="'grid-item-small-'+index">
        <img class="img-item" :src="'images/'+ item.img_name"/>
     </div>
   </div>
-<!--       <div class="grid-item" id="grid-item-1">
-        <img class="img-item"src="images/a.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-2">
-        <img class="img-item" src="images/b.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-3">
-        <img class="img-item" src="images/c.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-4">
-        <img class="img-item" src="images/c.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-5">
-        <img class="img-item" src="images/d.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-6">
-        <img class="img-item" src="images/e.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-7">
-        <img class="img-item" src="images/f.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-8">
-        <img class="img-item" src="images/g.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-9">
-        <img class="img-item" src="images/h.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-10">
-        <img class="img-item" src="images/i.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-11">
-        <img class="img-item" src="images/j.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-12">
-        <img class="img-item" src="images/k.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-13">
-        <img class="img-item" src="images/l.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-14">
-        <img class="img-item" src="images/m.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-15">
-        <img class="img-item" src="images/n.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-16">
-        <img class="img-item" src="images/o.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-12">
-        <img class="img-item" src="images/p.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-13">
-        <img class="img-item" src="images/q.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-14">
-        <img class="img-item" src="images/r.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-15">
-        <img class="img-item" src="images/s.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-16">
-        <img class="img-item" src="images/t.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-16">
-        <img class="img-item" src="images/u.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-16">
-        <img class="img-item" src="images/v.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-16">
-        <img class="img-item" src="images/w.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-16">
-        <img class="img-item" src="images/x.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-16">
-        <img class="img-item" src="images/y.jpg" />
-      </div>
-      <div class="grid-item" id="grid-item-16">
-        <img class="img-item" src="images/z.jpg" />
-      </div> -->
+  <div class="grid-item" id="grid-item-large">
+     <img class="img-item" :src="'images/'+ large_pics.img_name"/>
+  </div>
+  <div v-for="(item, index) in normal_pics">
+    <div class="grid-item grid-item-normal" :id="'grid-item-normal-'+index">
+       <img class="img-item" :src="'images/'+ item.img_name"/>
+    </div>
+  </div>
 </div>
-<!-- 
-<table class="table-wrapper">
-    <tbody>
-        <tr>
-            <td class="pic-frame" rowspan="2"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" /></td>
-            <td class="pic-frame" colspan="3"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" /></td>
-        </tr>
-        <tr>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" /></td>
-            <td class="pic-frame"><img class="img-item" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" /></td>
-        </tr>
-    </tbody>
-</table>
- -->
+
 <script type="text/javascript">
-  var app = new Vue({
-    el: '#app',
-    data: {
-      message: 'Hello Vue!',
-      pictures: imgs_data
-    }
-  })
 
 
   var fullWidth = window.innerWidth
-  var countPic = Math.floor(fullWidth / 150)
-  var picWidthItem = fullWidth / countPic
-  var leftPos = 0
-  var topPos = 0
-
-
-  if (fullWidth > 659) {
-    display_rating()
-  } else {
-    mobile_display()
+  if (fullWidth < 659) {
+    largePics = []
+    normalPics = []
   }
 
-  function display_rating(){
-    for (var i = 0; i < document.getElementsByClassName("grid-item").length; i++) {
-      // console.log(document.getElementsByClassName("grid-item")[i+1].style.width = )
-      document.getElementsByClassName("grid-item")[i].style.width = picWidthItem.toString() + "px"
-      document.getElementsByClassName("grid-item")[i].style.height = picWidthItem.toString() + "px"
+  var app = new Vue({
+    el: '#app',
+    data: {
+      pictures: imgs_data,
+      large_pics: largePics,
+      normal_pics: normalPics
     }
+  })
 
-    for (var i = 0; i < imgs_data.length ; i++) {
-      if (leftPos >= fullWidth) {
-        leftPos = 0
-        topPos += picWidthItem
-      }
-      if (imgs_data[i].rating == 2) {
-        document.getElementById("grid-item-"+ i ).style.width = (picWidthItem*3).toString() +"px"
-        document.getElementById("grid-item-"+ i ).style.height = (picWidthItem*3).toString() +"px"
-        document.getElementById("grid-item-"+ i ).style.zIndex  = "999"
-      }
-      else if (imgs_data[i].rating == 1) {
-        document.getElementById("grid-item-"+ i ).style.width = (picWidthItem*2).toString() +"px"
-        document.getElementById("grid-item-"+ i ).style.height = (picWidthItem*2).toString() +"px"
-        document.getElementById("grid-item-"+ i ).style.zIndex  = "888"
-      }
-      calculation_pos_img(i)
-    }
+  var columnPic = Math.floor(fullWidth / 150)
+  var picWidthItem = fullWidth / columnPic
+
+  var row = Math.floor(imgs_data.length / columnPic)
+  var imgsTable = new Array(row);
+  for (var n = 0; n < imgsTable.length; n++) {
+    imgsTable[n] = new Array(columnPic)
+  }
+
+  if (fullWidth > 659) {
+    set_rating_table()
+    display_rating()
+  } else {
+    renderSmallRating()
+  }
+
+  function display_rating() {
+    renderMostRating()
+    renderNormalRating()
+    renderSmallRating()
+    // for (var i = 0; i < document.getElementsByClassName("grid-item").length; i++) {
+    //   document.getElementsByClassName("grid-item")[i].style.width = picWidthItem.toString() + "px"
+    //   document.getElementsByClassName("grid-item")[i].style.height = picWidthItem.toString() + "px"
+    // }
+
+    // for (var i = 0; i < imgs_data.length ; i++) {
+    //   if (leftPos >= fullWidth) {
+    //     leftPos = 0
+    //     topPos += picWidthItem
+    //   }
+    //   if (imgs_data[i].rating == 2) {
+    //     document.getElementById("grid-item-"+ i ).style.width = (picWidthItem*3).toString() +"px"
+    //     document.getElementById("grid-item-"+ i ).style.height = (picWidthItem*3).toString() +"px"
+    //     document.getElementById("grid-item-"+ i ).style.zIndex  = "999"
+    //   }
+    //   else if (imgs_data[i].rating == 1) {
+    //     document.getElementById("grid-item-"+ i ).style.width = (picWidthItem*2).toString() +"px"
+    //     document.getElementById("grid-item-"+ i ).style.height = (picWidthItem*2).toString() +"px"
+    //     document.getElementById("grid-item-"+ i ).style.zIndex  = "888"
+    //   }
+    //   calculation_pos_img(i)
+    // }
 
   }
 
   function mobile_display(){
     for (var i = 0; i < document.getElementsByClassName("grid-item").length; i++) {
       // console.log(document.getElementsByClassName("grid-item")[i+1].style.width = )
-      document.getElementsByClassName("grid-item")[i].style.width = picWidthItem.toString() + "px"
-      document.getElementsByClassName("grid-item")[i].style.height = picWidthItem.toString() + "px"
+      document.getElementsByClassName("grid-item-small")[i].style.width = picWidthItem.toString() + "px"
+      document.getElementsByClassName("grid-item-small")[i].style.height = picWidthItem.toString() + "px"
     }
 
     for (var i = 0; i < imgs_data.length ; i++) {
@@ -184,37 +103,203 @@
         leftPos = 0
         topPos += picWidthItem
       }
-      document.getElementById("grid-item-"+ i ).style.left = leftPos+"px"
-      document.getElementById("grid-item-"+ i ).style.top = topPos+"px"
+      document.getElementById("grid-item-small-"+ i ).style.left = leftPos+"px"
+      document.getElementById("grid-item-small-"+ i ).style.top = topPos+"px"
       leftPos += picWidthItem
     }
 
   }
 
-  function calculation_pos_img(img_index) {
-    var left_pos = document.getElementById("grid-item-"+ img_index ).style.left
-    // console.log(left_pos)
-    document.getElementById("grid-item-"+ img_index).style.left = leftPos + "px"
-    document.getElementById("grid-item-"+ img_index).style.top = topPos + "px"
-    leftPos += picWidthItem
-    // if (left_pos <= ) {}
+  function set_rating_table() {
+    var leftPos = 0
+    var topPos = 0
+    for(var i=0; i < row; i ++) {
+      for (var n=0 ; n < columnPic; n++) {
+        var data = {
+          "picked": 0,
+          "left_pos": leftPos,
+          "top_pos": topPos,
+          "width": picWidthItem.toString() + "px",
+          "height": picWidthItem.toString() + "px"
+        }
+        imgsTable[i][n] = data
+        leftPos += picWidthItem
+      }
+      topPos += picWidthItem
+      leftPos = 0
+    }
   }
 
-  // document.getElementById("grid-item-2").style.left = "135px"
-  // document.getElementById("grid-item-3").style.left = "270px"
-  // document.getElementById("grid-item-4").style.left = "405px"
-  // document.getElementById("grid-item-5").style.left = "540px"
-  // document.getElementById("grid-item-6").style.left = "675px"
-  // document.getElementById("grid-item-7").style.left = "810px"
-  // document.getElementById("grid-item-8").style.left = "945px"
-  // document.getElementById("grid-item-9").style.left = "1080px"
-  // document.getElementById("grid-item-10").style.left = "1215px"
-  // document.getElementById("grid-item-11").style.left = "1350px"
-  // document.getElementById("grid-item-12").style.left = "1485px"
-  // document.getElementById("grid-item-13").style.left = "1620px"
-  // document.getElementById("grid-item-14").style.left = "1755px"
-  // document.getElementById("grid-item-15").style.left = "1890px"
-  // document.getElementById("grid-item-16").style.left = "2025px"
+  function renderMostRating() {
+    document.getElementById("grid-item-large").style.width = (picWidthItem*3).toString() +"px"
+    document.getElementById("grid-item-large").style.height = (picWidthItem*3).toString() +"px"
+    document.getElementById("grid-item-large").style.zIndex  = "999"
+    var countPic = 0
+
+    for(var i=0; i < row; i ++) {
+      for (var n=0 ; n < columnPic; n++) {
+        if (countPic == largePics['index']) {
+          var randRow = i
+          var randCol = n
+          if (n === columnPic - 1) {
+            // document.getElementById("grid-item-large").style.left = imgsTable[i][n-2].left_pos.toString() + "px"
+            // document.getElementById("grid-item-large").style.top = imgsTable[i][n-2].top_pos.toString() + "px"
+            // markMostRatingImgTable(i, n-2)
+            randCol = n - 2
+          }
+          if (n === columnPic - 2) {
+            // document.getElementById("grid-item-large").style.left = imgsTable[i][n-1].left_pos.toString() + "px"
+            // document.getElementById("grid-item-large").style.top = imgsTable[i][n-1].top_pos.toString() + "px"
+            // markMostRatingImgTable(i, n-1)
+            randCol = n - 1
+          }
+          if (i === row - 1) {
+            randRow = n - 2
+          }
+          if (i === row - 2) {
+            randRow = n - 1
+          }
+          // else {
+          //   // document.getElementById("grid-item-large").style.left = imgsTable[i][n].left_pos.toString() + "px"
+          //   // document.getElementById("grid-item-large").style.top = imgsTable[i][n].top_pos.toString() + "px"
+          //   // markMostRatingImgTable(i, n)
+          //   randRow = i
+          //   randCol = n
+          // }
+          document.getElementById("grid-item-large").style.left = imgsTable[randRow][randCol].left_pos.toString() + "px"
+          document.getElementById("grid-item-large").style.top = imgsTable[randRow][randCol].top_pos.toString() + "px"
+          markMostRatingImgTable(randRow, randCol)
+        }
+        countPic++
+      }
+    }
+  }
+
+  function renderNormalRating() {
+    for (var i = 0; i < document.getElementsByClassName("grid-item-normal").length; i++) {
+      document.getElementsByClassName("grid-item-normal")[i].style.width = (picWidthItem*2).toString() +"px"
+      document.getElementsByClassName("grid-item-normal")[i].style.height = (picWidthItem*2).toString() +"px"
+      // document.getElementsByClassName("grid-item-normal").style.zIndex = "888"
+      document.getElementsByClassName("grid-item-normal")[i].style.zIndex = "888"
+      // document.getElementById("grid-item-normal-"+i).style.zIndex  = "888"
+    }
+
+    var countPic = 0
+
+    for(var i=0; i < row; i ++) {
+      for (var n=0 ; n < columnPic; n++) {
+        for (var k=0; k < normalPics.length; k++) {
+          // console.log(normalPics[k]['index'])
+          if (countPic == normalPics[k]['index']) {
+            var randRow = i
+            var randCol = n
+            // console.log(countPic)
+            if (n === columnPic - 1) {
+              // var pos = shift_table_position(i, n - 2)
+              // document.getElementById("grid-item-normal-" + k).style.left = imgsTable[pos.r][pos.c].left_pos.toString() + "px"
+              // document.getElementById("grid-item-normal-" + k).style.top = imgsTable[pos.r][pos.c].top_pos.toString() + "px"
+              // markNormalRatingImgTable(pos.r, pos.c)
+              randCol = n - 2
+            }
+            if (i === row - 1) {
+              randRow = i - 1
+            }
+            // else {
+            //   // var pos = shift_table_position(i, n)
+            //   // document.getElementById("grid-item-normal-" + k).style.left = imgsTable[pos.r][pos.c].left_pos.toString() + "px"
+            //   // document.getElementById("grid-item-normal-" + k).style.top = imgsTable[pos.r][pos.c].top_pos.toString() + "px"
+            //   // markNormalRatingImgTable(pos.r, pos.c)
+            //   randRow = i
+            //   randCol = n
+            // }
+            var pos = shift_table_position(randRow, randCol)
+            document.getElementById("grid-item-normal-" + k).style.left = imgsTable[pos.r][pos.c].left_pos.toString() + "px"
+            document.getElementById("grid-item-normal-" + k).style.top = imgsTable[pos.r][pos.c].top_pos.toString() + "px"
+            markNormalRatingImgTable(pos.r, pos.c)
+          }
+        }
+        countPic++
+      }
+    }
+  }
+
+  function renderSmallRating() {
+    for (var i = 0; i < document.getElementsByClassName("grid-item-small").length; i++) {
+      document.getElementsByClassName("grid-item-small")[i].style.width = picWidthItem.toString() + "px"
+      document.getElementsByClassName("grid-item-small")[i].style.height = picWidthItem.toString() + "px"
+    }
+    var leftPos = 0
+    var topPos = 0
+    for (var i = 0; i < imgs_data.length ; i++) {
+      if (leftPos >= fullWidth) {
+        leftPos = 0
+        topPos += picWidthItem
+      }
+      document.getElementById("grid-item-small-"+ i).style.left = leftPos.toString() + "px"
+      document.getElementById("grid-item-small-"+ i).style.top = topPos.toString() + "px"
+      leftPos += picWidthItem
+      // calculation_pos_img(i)
+    }
+  }
+
+  function shift_table_position(i, n) {
+    var randRow = i
+    var randCol = n
+    if (imgsTable[randRow][randCol]['picked'] ||
+      imgsTable[randRow][randCol+1]['picked'] ||
+      imgsTable[randRow+1][randCol]['picked'] ||
+      imgsTable[randRow+1][randCol+1]['picked']
+    ) {
+      while(true) {
+        if(randRow == row -2) {
+          randRow = 0
+        }
+        else if (randRow >= 0) {
+          randRow += 1
+        }
+
+        if (randCol == 0) {
+          randCol = columnPic - 2
+        }
+        else if (n >= 1) {
+          randCol -= 1
+        }
+        // randRow = Math.floor(Math.random() * row)
+        // randCol = Math.floor(Math.random() * columnPic)
+        
+        if (!imgsTable[randRow][randCol]['picked'] &&
+            !imgsTable[randRow][randCol+1]['picked'] &&
+            !imgsTable[randRow+1][randCol]['picked'] &&
+            !imgsTable[randRow+1][randCol+1]['picked']
+          ) {
+          break;
+        }
+      }
+    }
+    return { 'r': randRow, 'c': randCol }
+  }
+
+  function markMostRatingImgTable(i, n) {
+    imgsTable[i][n]['picked'] = 1
+    imgsTable[i][n+1]['picked'] = 1
+    imgsTable[i][n+2]['picked'] = 1
+
+    imgsTable[i+1][n]['picked'] = 1
+    imgsTable[i+1][n+1]['picked'] = 1
+    imgsTable[i+1][n+2]['picked'] = 1
+
+    imgsTable[i+2][n]['picked'] = 1
+    imgsTable[i+2][n+1]['picked'] = 1
+    imgsTable[i+2][n+2]['picked'] = 1
+  }
+
+  function markNormalRatingImgTable(i, n) {
+    imgsTable[i][n]['picked'] = 1
+    imgsTable[i][n+1]['picked'] = 1
+
+    imgsTable[i+1][n]['picked'] = 1
+    imgsTable[i+1][n+1]['picked'] = 1
+  }
 
 </script>
 </body>
